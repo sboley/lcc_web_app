@@ -13,22 +13,41 @@ class FlavorService {
 
   Future<Map<String, dynamic>> getFlavorData() async {
     const defaultFlavors = [
-      "Vanilla",
-      "Chocolate",
-      "Strawberry",
+      "# Specialty FLAVORS",
+      "Brown Sugar Cheesecake",
+      "Cotton Candy Crunch",
+      "Coffee",
+      "Ube & Beyond",
+      "Maker's Mark Butter Pecan",
+      "Italian Coconut Cake",
+
+          "*Dairy Free: Strawberry Sorbet",
+
+         " * Every Day Flavors",
       "Cookie Dough",
+      "Buckeye",
+      "Chocolate",
+      "Birthday Cake",
       "Dulce De Leche",
-      "Buckeye"
+      "Peanut Butter Cup",
+      "Strawberry",
+      "Butter Pecan",
+      "Cookie Monster",
+      "Blue Moon",
+      "Mint Freckle",
+      "Vanilla",
+      "Salty Caramel",
+      "Cookies-n-creme"
     ];
 
     const defaultHours = [
-      "Monday: 2pm - 9pm",
-      "Tuesday: 2pm - 9pm",
-      "Wednesday: 2pm - 9pm",
-      "Thursday: 2pm - 9pm",
-      "Friday: 12pm- 10pm",
+      "Monday: 2pm - 8pm",
+      "Tuesday: 2pm - 8pm",
+      "Wednesday: 2pm - 8pm",
+      "Thursday: 2pm - 8pm",
+      "Friday: 12pm- 9pm",
       "Saturday: 12pm - 9pm",
-      "Sunday: 12pm - 9pm"
+      "Sunday: 12pm - 8pm"
     ];
 
     try {
