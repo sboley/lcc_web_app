@@ -177,11 +177,11 @@ class _HomePageState extends State<HomePage> {
               title: const Text('Flavors'),
               onTap: () => _launchFlavors(context),
             ),
-            ListTile(
-              leading: const Icon(Icons.restaurant_menu, color: Colors.pink),
-              title: const Text('Menu'),
-              onTap: () => _launchMenu(context),
-            ),
+            // ListTile(
+            //   leading: const Icon(Icons.restaurant_menu, color: Colors.pink),
+            //   title: const Text('Menu'),
+            //   onTap: () => _launchMenu(context),
+            // ),
             ListTile(
               leading: const Icon(Icons.schedule, color: Colors.pink),
               title: const Text('Location'),
