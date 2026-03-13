@@ -13,16 +13,57 @@ class MenuScreen extends StatelessWidget {
     'images/PansMenu.jpg',
   ];
 
+  void _showZoomedImage(BuildContext context, String imagePath) {
+    showDialog(
+      context: context,
+      builder: (context) => Dialog.fullscreen(
+        backgroundColor: Colors.black.withOpacity(0.9),
+        child: Stack(
+          children: [
+            // InteractiveViewer handles the pinch-to-zoom and panning
+            Center(
+              child: InteractiveViewer(
+                minScale: 0.5,
+                maxScale: 4.0,
+                child: Image.asset(imagePath),
+              ),
+            ),
+            // Close button
+            Positioned(
+              top: 40,
+              right: 20,
+              child: IconButton(
+                icon: const Icon(Icons.close, color: Colors.white, size: 30),
+                onPressed: () => Navigator.pop(context),
+              ),
+            ),
+            // Help text
+            const Positioned(
+              bottom: 40,
+              left: 0,
+              right: 0,
+              child: Center(
+                child: Text(
+                  'Pinch to zoom / Drag to move',
+                  style: TextStyle(color: Colors.white70),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
 
-    // Adjusted logic:
-    // - On mobile (< 600px wide), show 2 columns so they aren't too small.
-    // - On laptop/web, show 3 columns so they are nice and large.
     int crossAxisCount;
-    if (screenWidth < 600) {
-      crossAxisCount = 2; 
+    if (screenWidth < 500) {
+      crossAxisCount = 1; 
+    } else if (screenWidth < 900) {
+      crossAxisCount = 2;
     } else {
       crossAxisCount = 3; 
     }
@@ -40,27 +81,30 @@ class MenuScreen extends StatelessWidget {
             crossAxisCount: crossAxisCount,
             crossAxisSpacing: 16,
             mainAxisSpacing: 16,
-            childAspectRatio: 0.75, // Keeps your 3/4 aspect ratio
+            childAspectRatio: 0.75,
           ),
           itemBuilder: (context, index) {
             final imagePath = menuImages[index];
             
-            return Card(
-              elevation: 3,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(12),
-              ),
-              clipBehavior: Clip.antiAlias,
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Image.asset(
-                  imagePath,
-                  fit: BoxFit.contain,
-                  errorBuilder: (context, error, stackTrace) {
-                    return const Center(
-                      child: Icon(Icons.broken_image, size: 50, color: Colors.grey),
-                    );
-                  },
+            return GestureDetector(
+              onTap: () => _showZoomedImage(context, imagePath),
+              child: Card(
+                elevation: 3,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                clipBehavior: Clip.antiAlias,
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Image.asset(
+                    imagePath,
+                    fit: BoxFit.contain,
+                    errorBuilder: (context, error, stackTrace) {
+                      return const Center(
+                        child: Icon(Icons.broken_image, size: 50, color: Colors.grey),
+                      );
+                    },
+                  ),
                 ),
               ),
             );
