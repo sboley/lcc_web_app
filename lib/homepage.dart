@@ -233,29 +233,29 @@ class _HomePageState extends State<HomePage> {
                 child: Column(
                   children: [
                     // Daily flavor card
-                    _buildCard(
-                      width: 500,  // max width
-                      child: Center(
-                        child: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            const Icon(Icons.star, color: Colors.pink, size: 36),
-                            const SizedBox(width: 12),
-                            Expanded(
-                              child: Text(
-                                "Today's Flavor: $daily",
-                                style: const TextStyle(
-                                    fontSize: 24,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.pink),
-                                textAlign: TextAlign.center,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                    const SizedBox(height: 16),
+                    // _buildCard(
+                    //   width: 500,  // max width
+                    //   child: Center(
+                    //     child: Row(
+                    //       mainAxisSize: MainAxisSize.min,
+                    //       children: [
+                    //         const Icon(Icons.star, color: Colors.pink, size: 36),
+                    //         const SizedBox(width: 12),
+                    //         Expanded(
+                    //           child: Text(
+                    //             "Today's Flavor: $daily",
+                    //             style: const TextStyle(
+                    //                 fontSize: 24,
+                    //                 fontWeight: FontWeight.bold,
+                    //                 color: Colors.pink),
+                    //             textAlign: TextAlign.center,
+                    //           ),
+                    //         ),
+                    //       ],
+                    //     ),
+                    //   ),
+                    // ),
+                    // const SizedBox(height: 16),
 
                     // Hours card
                     _buildCard(
