@@ -18,9 +18,9 @@ class FlavorService {
 
   Future<Map<String, dynamic>> getFlavorData() async {
     const defaultFlavors = [
-      "Strawberry Cookies 'n' Creme",
-      "Italian Coconut Cake",
-      "Peanut Butter Fudge Brownie",
+      "Strawberry Cookie",
+      "Maple Walnut",
+      "Chocolate Chip",
       "Chocolate Toffee",
       "Maker's Mark Butter Pecan",
       "Coffee",
