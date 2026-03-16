@@ -24,7 +24,7 @@ class FlavorService {
       "Chocolate Toffee",
       "Maker's Mark Butter Pecan",
       "Coffee",
-      "Ube & Beyhond",
+      "Ube & Beyond",
 
       "Cookie Dough",
       "Buckeye",

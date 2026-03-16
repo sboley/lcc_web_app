@@ -68240,10 +68240,10 @@ l=e
 k=J.Qf(l,new A.Ul())
 j=J.Qf(l,new A.Um())
 i=B.ls
-h=B.eC
+h=B.eB
 if(!J.d(k,-1)&&!J.d(j,-1)&&k<j)i=J.aiR(l,k+1,j)
 if(!J.d(j,-1))h=J.aiQ(l,j+1)
-g=n.o9(J.ci(h)!==0?h:B.eC)
+g=n.o9(J.ci(h)!==0?h:B.eB)
 f=A.aI(["flavors",h,"daily",g,"hours",i],t.N,t.z)
 q=f
 s=1
@@ -68256,7 +68256,7 @@ s=6
 break
 case 3:s=2
 break
-case 6:q=A.aI(["flavors",B.eC,"daily",n.o9(B.eC),"hours",B.ls],t.N,t.z)
+case 6:q=A.aI(["flavors",B.eB,"daily",n.o9(B.eB),"hours",B.ls],t.N,t.z)
 s=1
 break
 case 1:return A.P(q,r)
@@ -68369,10 +68369,10 @@ l=e
 k=J.Qf(l,new A.Uh())
 j=J.Qf(l,new A.Ui())
 i=B.lo
-h=B.eB
+h=B.eC
 if(!J.d(k,-1)&&!J.d(j,-1)&&k<j)i=J.aiR(l,k+1,j)
 if(!J.d(j,-1))h=J.aiQ(l,j+1)
-g=n.o9(J.ci(h)!==0?h:B.eB)
+g=n.o9(J.ci(h)!==0?h:B.eC)
 f=A.aI(["flavors",h,"daily",g,"hours",i],t.N,t.z)
 q=f
 s=1
@@ -68385,7 +68385,7 @@ s=6
 break
 case 3:s=2
 break
-case 6:q=A.aI(["flavors",B.eB,"daily",n.o9(B.eB),"hours",B.lo],t.N,t.z)
+case 6:q=A.aI(["flavors",B.eC,"daily",n.o9(B.eC),"hours",B.lo],t.N,t.z)
 s=1
 break
 case 1:return A.P(q,r)
@@ -73246,7 +73246,6 @@ B.aR=new A.jk(4,"start")
 B.fj=new A.jk(5,"end")
 B.Dt=s([B.bX,B.cw,B.bw,B.dG,B.aR,B.fj],A.ae("y<jk>"))
 B.Dv=s([B.fU,B.fV],A.ae("y<rN>"))
-B.eB=s(["Cotton Candy Crunch","Maple Walnut","Chocolate Chip","Chocolate Toffee","Maker's Mark Butter Pecan","Coffee","Ube & Beyhond","Cookie Dough","Buckeye","Chocolate","Birthday Cake","Dulce De Leche","Peanut Butter Cup","Strawberry","Butter Pecan","Cookie Monster","Blue Moon","Mint Freckle","Vanilla","Salty Caramel","Cookies-n-creme"],t.s)
 B.Dw=s(["images/CupsConesMenu.jpg","images/SundaesMenu.jpg","images/ShakesMenu.jpg","images/MiscMenu.jpg","images/CoffeeMenu.jpg","images/CakesMenu.jpg","images/PansMenu.jpg"],t.s)
 B.Em=new A.mt("en",null,"US")
 B.lm=s([B.Em],t.ss)
@@ -73265,7 +73264,7 @@ B.z2=new A.ew(B.P,null,null,B.w3,null)
 B.wq=new A.dP("Hours",null,B.wn,null,null)
 B.yX=new A.ew(B.P,null,null,B.wq,null)
 B.DE=s([B.yZ,B.z2,B.yX],t.F)
-B.eC=s(["Specialty FLAVORS","Brown Sugar Cheesecake","Cotton Candy Crunch","Coffee","Ube & Beyond","Maker's Mark Butter Pecan","Italian Coconut Cake","*Dairy Free: Strawberry Sorbet"," * Every Day Flavors","Cookie Dough","Buckeye","Chocolate","Birthday Cake","Dulce De Leche","Peanut Butter Cup","Strawberry","Butter Pecan","Cookie Monster","Blue Moon","Mint Freckle","Vanilla","Salty Caramel","Cookies-n-creme"],t.s)
+B.eB=s(["Specialty FLAVORS","Brown Sugar Cheesecake","Cotton Candy Crunch","Coffee","Ube & Beyond","Maker's Mark Butter Pecan","Italian Coconut Cake","*Dairy Free: Strawberry Sorbet"," * Every Day Flavors","Cookie Dough","Buckeye","Chocolate","Birthday Cake","Dulce De Leche","Peanut Butter Cup","Strawberry","Butter Pecan","Cookie Monster","Blue Moon","Mint Freckle","Vanilla","Salty Caramel","Cookies-n-creme"],t.s)
 B.DF=s([-1,0,0,1,0,0,-1,0,1,0,0,0,-1,1,0,1,1,1,1,0],t.n)
 B.w8=new A.xe(0,"left")
 B.w9=new A.xe(1,"right")
@@ -73285,6 +73284,7 @@ B.yS=new A.lC(0,"auto")
 B.yT=new A.lC(1,"full")
 B.yU=new A.lC(2,"chromium")
 B.DO=s([B.yS,B.yT,B.yU,B.bF],A.ae("y<lC>"))
+B.eC=s(["Cotton Candy Crunch","Maple Walnut","Chocolate Chip","Chocolate Toffee","Maker's Mark Butter Pecan","Coffee","Ube & Beyond","Cookie Dough","Buckeye","Chocolate","Birthday Cake","Dulce De Leche","Peanut Butter Cup","Strawberry","Butter Pecan","Cookie Monster","Blue Moon","Mint Freckle","Vanilla","Salty Caramel","Cookies-n-creme"],t.s)
 B.aQ=new A.e1(1,"fuchsia")
 B.DQ=s([B.a8,B.aQ,B.a2,B.aD,B.aE,B.aF],A.ae("y<e1>"))
 B.wF=new A.qj(0,"topLeft")
