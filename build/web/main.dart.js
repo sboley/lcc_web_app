@@ -68430,7 +68430,7 @@ m=p.a(r?l:s.i(0,"hours"))
 if(m==null)m=A.c(["Hours unavailable"],t.s)
 s=this.a
 r=t.F
-q=s.Fv(A.lG(A.agM(A.c([B.BO,B.w3,A.ajW(A.xj("Happy St. Patrick's Day \nToday's Flavors: "+n,B.Nl,B.bw),1)],r),B.az,B.cf),l,l),500)
+q=s.Fv(A.lG(A.agM(A.c([B.BO,B.w3,A.ajW(A.xj("Happy St. Patrick's Day \nToday's Flavor: "+n,B.Nl,B.bw),1)],r),B.az,B.cf),l,l),500)
 p=A.c([A.lG(A.agM(B.DE,B.az,B.cf),l,l),B.w4],r)
 B.b.L(p,J.lp(m,new A.a9e(),t.l7))
 return A.alU(new A.eW(B.fQ,l,l,A.tk(A.c([q,B.Kb,s.Fv(A.tk(p,B.az,B.aN,B.dp),500),B.j8,B.x5,A.auP(new A.a9f(o,n),J.ci(o),B.GC,new A.a9g(),!0)],r),B.az,B.aN,B.cf),l),B.eq)},
