@@ -25,8 +25,8 @@ class FlavorService {
       "Mint Cookies -n- Creme",
       "Coffee",
       "Ube & Beyond",
-      "Chocolate Toffee"
-          "*Dairy Free: Strawberry Sorbet ",
+      "Chocolate Toffee",
+          "*Dairy Free: Mango Sorbet ",
           "*Dairy Free: Baha Blast",
       "Cookie Dough",
       "Buckeye",
