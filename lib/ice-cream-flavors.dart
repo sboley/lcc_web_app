@@ -18,14 +18,16 @@ class FlavorService {
 
   Future<Map<String, dynamic>> getFlavorData() async {
     const defaultFlavors = [
-      "Cotton Candy Crunch",
-      "Maple Walnut",
-      "Chocolate Chip",
+      "Magically Delicious",
+      "Holiday Treat",
+      "Creme de Menthe",
       "Chocolate Toffee",
-      "Maker's Mark Butter Pecan",
+      "Mint Cookies -n- Creme",
       "Coffee",
       "Ube & Beyond",
-
+      "Chocolate Toffee"
+          "*Dairy Free: Strawberry Sorbet ",
+          "*Dairy Free: Baha Blast",
       "Cookie Dough",
       "Buckeye",
       "Chocolate",
@@ -139,7 +141,7 @@ class _FlavorScreenState extends State<FlavorScreen> {
                           const SizedBox(width: 12),
                           Expanded(
                             child: Text(
-                              "Today's Flavor: $daily",
+                              "Happy St. Patrick's Day \nToday's Flavors: $daily",
                               style: const TextStyle(
                                   fontSize: 24, fontWeight: FontWeight.bold, color: Colors.pink),
                               textAlign: TextAlign.center,
