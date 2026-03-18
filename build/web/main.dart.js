@@ -61340,7 +61340,7 @@ if(a)c.y=A.u(t.N,t.UX)
 s=t.jl
 r=A.c([],s)
 q=c.y.i(0,b)
-if(q==null)q=B.eC
+if(q==null)q=B.eD
 p=A.u(t.ob,t.UX)
 o=c.y.gbp()
 n=o.eE(o)
@@ -61359,8 +61359,8 @@ if(j){r=A.c([],s)
 i=c.y
 i.toString
 q=i.i(0,h.gd4())
-if(q==null)q=B.eC}else{r=B.eC
-q=B.eC}l=h
+if(q==null)q=B.eD}else{r=B.eD
+q=B.eD}l=h
 continue}if(j){i=h.b
 i=i==null?b:i.gNT()
 j=i===!0}else j=!1
@@ -68240,10 +68240,10 @@ l=e
 k=J.Qf(l,new A.Ul())
 j=J.Qf(l,new A.Um())
 i=B.ls
-h=B.eB
+h=B.eC
 if(!J.d(k,-1)&&!J.d(j,-1)&&k<j)i=J.aiR(l,k+1,j)
 if(!J.d(j,-1))h=J.aiQ(l,j+1)
-g=n.o9(J.ci(h)!==0?h:B.eB)
+g=n.o9(J.ci(h)!==0?h:B.eC)
 f=A.aI(["flavors",h,"daily",g,"hours",i],t.N,t.z)
 q=f
 s=1
@@ -68256,7 +68256,7 @@ s=6
 break
 case 3:s=2
 break
-case 6:q=A.aI(["flavors",B.eB,"daily",n.o9(B.eB),"hours",B.ls],t.N,t.z)
+case 6:q=A.aI(["flavors",B.eC,"daily",n.o9(B.eC),"hours",B.ls],t.N,t.z)
 s=1
 break
 case 1:return A.P(q,r)
@@ -68369,10 +68369,10 @@ l=e
 k=J.Qf(l,new A.Uh())
 j=J.Qf(l,new A.Ui())
 i=B.lo
-h=B.eD
+h=B.eB
 if(!J.d(k,-1)&&!J.d(j,-1)&&k<j)i=J.aiR(l,k+1,j)
 if(!J.d(j,-1))h=J.aiQ(l,j+1)
-g=n.o9(J.ci(h)!==0?h:B.eD)
+g=n.o9(J.ci(h)!==0?h:B.eB)
 f=A.aI(["flavors",h,"daily",g,"hours",i],t.N,t.z)
 q=f
 s=1
@@ -68385,7 +68385,7 @@ s=6
 break
 case 3:s=2
 break
-case 6:q=A.aI(["flavors",B.eD,"daily",n.o9(B.eD),"hours",B.lo],t.N,t.z)
+case 6:q=A.aI(["flavors",B.eB,"daily",n.o9(B.eB),"hours",B.lo],t.N,t.z)
 s=1
 break
 case 1:return A.P(q,r)
@@ -68430,7 +68430,7 @@ m=p.a(r?l:s.i(0,"hours"))
 if(m==null)m=A.c(["Hours unavailable"],t.s)
 s=this.a
 r=t.F
-q=s.Fv(A.lG(A.agM(A.c([B.BO,B.w3,A.ajW(A.xj("Happy St. Patrick's Day \nToday's Flavor: "+n,B.Nl,B.bw),1)],r),B.az,B.cf),l,l),500)
+q=s.Fv(A.lG(A.agM(A.c([B.BO,B.w3,A.ajW(A.xj("\nToday's Flavor: "+n,B.Nl,B.bw),1)],r),B.az,B.cf),l,l),500)
 p=A.c([A.lG(A.agM(B.DE,B.az,B.cf),l,l),B.w4],r)
 B.b.L(p,J.lp(m,new A.a9e(),t.l7))
 return A.alU(new A.eW(B.fQ,l,l,A.tk(A.c([q,B.Kb,s.Fv(A.tk(p,B.az,B.aN,B.dp),500),B.j8,B.x5,A.auP(new A.a9f(o,n),J.ci(o),B.GC,new A.a9g(),!0)],r),B.az,B.aN,B.cf),l),B.eq)},
@@ -73209,6 +73209,7 @@ B.lj=new A.ms(3,"center")
 B.CH=new A.ms(4,"bottom")
 B.CJ=s([0,6,12,18],t.t)
 B.CL=s([239,191,189],t.t)
+B.eB=s(["Magically Delicious","Holiday Treat","Creme de Menthe","Chocolate Toffee","Mint Cookies -n- Creme","Coffee","Bluemoon Cookie Dough","Chocolate Toffee","*Dairy Free: Mango Sorbet ","*Dairy Free: Baha Blast","Cookie Dough","Buckeye","Chocolate","Birthday Cake","Dulce De Leche","Peanut Butter Cup","Strawberry","Butter Pecan","Cookie Monster","Blue Moon","Mint Freckle","Vanilla","Salty Caramel","Cookies-n-creme"],t.s)
 B.D7=s([4,9,14,19],t.t)
 B.Ee=s([137,80,78,71,13,10,26,10],t.Z)
 B.C0=new A.k3(0,"png")
@@ -73264,7 +73265,7 @@ B.z2=new A.ew(B.P,null,null,B.w3,null)
 B.wq=new A.dP("Hours",null,B.wn,null,null)
 B.yX=new A.ew(B.P,null,null,B.wq,null)
 B.DE=s([B.yZ,B.z2,B.yX],t.F)
-B.eB=s(["Specialty FLAVORS","Brown Sugar Cheesecake","Cotton Candy Crunch","Coffee","Ube & Beyond","Maker's Mark Butter Pecan","Italian Coconut Cake","*Dairy Free: Strawberry Sorbet"," * Every Day Flavors","Cookie Dough","Buckeye","Chocolate","Birthday Cake","Dulce De Leche","Peanut Butter Cup","Strawberry","Butter Pecan","Cookie Monster","Blue Moon","Mint Freckle","Vanilla","Salty Caramel","Cookies-n-creme"],t.s)
+B.eC=s(["Specialty FLAVORS","Brown Sugar Cheesecake","Cotton Candy Crunch","Coffee","Ube & Beyond","Maker's Mark Butter Pecan","Italian Coconut Cake","*Dairy Free: Strawberry Sorbet"," * Every Day Flavors","Cookie Dough","Buckeye","Chocolate","Birthday Cake","Dulce De Leche","Peanut Butter Cup","Strawberry","Butter Pecan","Cookie Monster","Blue Moon","Mint Freckle","Vanilla","Salty Caramel","Cookies-n-creme"],t.s)
 B.DF=s([-1,0,0,1,0,0,-1,0,1,0,0,0,-1,1,0,1,1,1,1,0],t.n)
 B.w8=new A.xe(0,"left")
 B.w9=new A.xe(1,"right")
@@ -73306,7 +73307,7 @@ B.DY=s([],t.E)
 B.DZ=s([],t.fJ)
 B.DX=s([],t.ER)
 B.E2=s([],t.tc)
-B.eC=s([],t.jl)
+B.eD=s([],t.jl)
 B.E4=s([],t.wi)
 B.E3=s([],A.ae("y<alb<@>>"))
 B.i6=s([],t.AO)
@@ -73344,7 +73345,6 @@ B.qz=new A.f6(8,"symbolModifier")
 B.lu=s([B.cg,B.ch,B.ci,B.cj,B.ir,B.is,B.it,B.iu,B.qz],A.ae("y<f6>"))
 B.i7=s([!0,!1],t.HZ)
 B.El=s(["pointerdown","pointermove","pointerleave","pointerup","pointercancel","touchstart","touchend","touchmove","touchcancel","mousedown","mousemove","mouseleave","mouseup","wheel"],t.s)
-B.eD=s(["Magically Delicious","Holiday Treat","Creme de Menthe","Chocolate Toffee","Mint Cookies -n- Creme","Coffee","Ube & Beyond","Chocolate Toffee","*Dairy Free: Mango Sorbet ","*Dairy Free: Baha Blast","Cookie Dough","Buckeye","Chocolate","Birthday Cake","Dulce De Leche","Peanut Butter Cup","Strawberry","Butter Pecan","Cookie Monster","Blue Moon","Mint Freckle","Vanilla","Salty Caramel","Cookies-n-creme"],t.s)
 B.k=new A.v5(0,"ignored")
 B.ac=new A.e(4294967304)
 B.dc=new A.e(4294967323)
