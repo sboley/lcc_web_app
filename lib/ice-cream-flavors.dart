@@ -23,7 +23,7 @@ class FlavorService {
       "Creme de Menthe",
       "Chocolate Toffee",
       "Mint Cookies -n- Creme",
-      "Coffee",
+      "Buckeye Latte",
       "Bluemoon Cookie Dough",
       "Chocolate Toffee",
           "*Dairy Free: Mango Sorbet ",
@@ -141,7 +141,7 @@ class _FlavorScreenState extends State<FlavorScreen> {
                           const SizedBox(width: 12),
                           Expanded(
                             child: Text(
-                              "\nToday's Flavor: $daily",
+                              "Today's Flavor: $daily",
                               style: const TextStyle(
                                   fontSize: 24, fontWeight: FontWeight.bold, color: Colors.pink),
                               textAlign: TextAlign.center,
