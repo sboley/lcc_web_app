@@ -21,7 +21,7 @@ class FlavorService {
       "Coffee",
       "Pineapple Cheesecake",
       "Maker's Mark Butter Pecan",
-      "Peeptastik",
+      "Nerds",
       "Savory Charcuterie Creme",
       "Blueberry Lavendar",
       "German Chocolate Cake",
