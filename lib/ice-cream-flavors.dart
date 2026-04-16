@@ -23,7 +23,6 @@ class FlavorService {
       "Mint Cookie Dough",
       "Peach",
       "Blueberry Lavendar",
-      "Red Velvet Cake",
       "Peanut Butter Caramel Coffee",
       "Pineapple Cheesecake",
           "* Dairy Free: Pineapple Sorbet ",
