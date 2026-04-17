@@ -26,8 +26,8 @@ class FlavorService {
       "Coffee Toffee Walnut",
       "Blue Monster",
       'Cookies -n- Coconut Creme'
-          "* Dairy Free: Pineapple Sorbet ",
-          "* Dairy Free: Strawberry Sorbet",
+          "* Blue Lemon Sorbet",
+          "* Red Pop Sorbet",
       "Salty Caramel",
       "Cookie Dough",
       "Buckeye",
