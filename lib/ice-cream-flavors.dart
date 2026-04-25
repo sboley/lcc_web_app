@@ -24,7 +24,7 @@ class FlavorService {
       "Overzealous Birthday Cake",
       "Mallo Creme",
       "Coffee",
-      "Sweet Caramel Cocnut"
+      "Sweet Caramel Coconut",
           "* Red Pop Sorbet",
           "* Peach Sorbet",
       "Salty Caramel",
