@@ -21,7 +21,7 @@ class FlavorService {
       "Fairy Dream",
       "Peanut Butter Fudge Brownie",
       "Strawberry Cheesecake",
-      "Overzealous Birthday Cake",
+      "Birthday Cake Cookie Dough",
       "Mallo Creme",
       "Coffee",
       "Sweet Caramel Coconut",
