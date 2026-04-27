@@ -27,7 +27,7 @@ class FlavorService {
       "Sweet Caramel Coconut",
           "* Cherry Sorbet",
           "* Green Berry Sorbet",
-      "Salty Caramel",
+      "SOLD OUT! Salty Caramel",
       "Cookie Dough",
       "Buckeye",
       "Chocolate",
@@ -209,12 +209,39 @@ class _FlavorScreenState extends State<FlavorScreen> {
                       final flavor = flavors[index];
                       final isDaily = flavor == daily;
 
+                      if (flavor.contains("SOLD OUT!") && flavor.contains("Salty Caramel")) {
+                        return Card(
+                          color: isDaily ? Colors.pink[100] : Colors.white,
+                          child: ListTile(
+                            leading: const Icon(Icons.icecream, color: Colors.brown),
+                            title: Text.rich(
+                              TextSpan(
+                                children: [
+                                  const TextSpan(text: "SOLD OUT! "),
+                                  const TextSpan(
+                                    text: "Salty Caramel",
+                                    style: TextStyle(
+                                      decoration: TextDecoration.lineThrough,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            trailing: isDaily
+                                ? const Icon(Icons.check_circle, color: Colors.pink)
+                                : null,
+                          ),
+                        );
+                      }
+
                       return Card(
                         color: isDaily ? Colors.pink[100] : Colors.white,
                         child: ListTile(
                           leading:
                           const Icon(Icons.icecream, color: Colors.brown),
-                          title: Text(flavor),
+                          title: Text(
+                            flavor,
+                          ),
                           trailing: isDaily
                               ? const Icon(Icons.check_circle, color: Colors.pink)
                               : null,
