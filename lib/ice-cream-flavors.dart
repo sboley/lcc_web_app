@@ -19,7 +19,7 @@ class FlavorService {
   Future<Map<String, dynamic>> getFlavorData() async {
     const defaultFlavors = [
       "M&M Swirl",
-      "Lemon Meringue",
+      "Rootbeer",
       "Strawberry Cheesecake",
       "Birthday Cake Cookie Dough",
       "Mallo Creme",
