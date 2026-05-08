@@ -20,10 +20,10 @@ class FlavorService {
     const defaultFlavors = [
       "Rootbeer",
       "Baklava",
-      "Caramel Cheesecake",
+      "Coconut Creme",
       "Chocolate Drumline",
       "Black Raspberry Cookies-n-Creme",
-      "Twixter Coffee",
+      "White Chocolate Mocha (Coffee)",
       "Snickerdoodle Chai Cookie",
           "* Peach Sorbet",
           "* Strawberry Sorbet",
