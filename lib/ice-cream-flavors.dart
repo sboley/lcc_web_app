@@ -18,13 +18,13 @@ class FlavorService {
 
   Future<Map<String, dynamic>> getFlavorData() async {
     const defaultFlavors = [
-      "Makers Mark Butter Pecan",
-      "Dark Chocolate Espresso",
-      "Strawberry Margarita Sherbet",
       "Mango",
       "Decadent Chocolate Cake",
+      "Dark Chocolate Espresso",
+      "Peachy Mallo",
       "Blue Razz Sky",
-      "Sweet Caramel Coconut",
+      "Maker's Mark Butter Pecan",
+      "Strawberry Margarita (non-alcoholic) Sherbet",
           "* Blueberry Sorbet",
           "* Strawberry Sorbet",
       "Salty Caramel",
