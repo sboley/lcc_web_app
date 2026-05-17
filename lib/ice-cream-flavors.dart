@@ -25,7 +25,7 @@ class FlavorService {
       "Maple Walnut",
       "Rootbeer Cream Soda",
       "Strawberry Margarita (non-alcoholic) Sherbet",
-          "* Blueberry Sorbet",
+          "* Jolly Blue Razz Sorbet",
           "* Strawberry Sorbet",
       "Salty Caramel",
       "Cookie Dough",
