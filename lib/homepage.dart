@@ -41,13 +41,13 @@ class FlavorService {
     ];
 
     const defaultHours = [
-      "Monday: 2pm - 8pm",
-      "Tuesday: 2pm - 8pm",
-      "Wednesday: 2pm - 8pm",
-      "Thursday: 2pm - 8pm",
-      "Friday: 12pm- 9pm",
-      "Saturday: 12pm - 9pm",
-      "Sunday: 12pm - 8pm"
+      "Monday: 12pm - 9pm",
+      "Tuesday: 12pm - 9pm",
+      "Wednesday: 12pm - 9pm",
+      "Thursday: 12pm - 9pm",
+      "Friday: 12pm- 9:30pm",
+      "Saturday: 12pm - 9:30pm",
+      "Sunday: 12pm - 9pm"
     ];
 
     try {
