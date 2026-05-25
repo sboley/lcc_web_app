@@ -25,7 +25,7 @@ class FlavorService {
       "Buckeye Latte",
       "Strawberry Peach Cheesecake",
       "Cotton Candy Crunch",
-          "* Blue Typhoon Sorbet",
+          "* Lemon Sorbet",
           "* Strawberry Peach Sorbet",
       "Salty Caramel",
       "Cookie Dough",
