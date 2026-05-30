@@ -18,14 +18,14 @@ class FlavorService {
 
   Future<Map<String, dynamic>> getFlavorData() async {
     const defaultFlavors = [
-      "Unbaked Delight",
+      "Mixed Berry Crisp",
       "Chocolate Caramel Peanut",
       "Nutty Monster",
       "Salted Malted Cookie Dough",
       "Red Hot",
       "Keylime Pie",
       "Coffee",
-          "* Lemon Sorbet",
+          "* Pineapple Sorbet",
           "* Maraschino Cherry Sorbet",
       "Salty Caramel",
       "Cookie Dough",
