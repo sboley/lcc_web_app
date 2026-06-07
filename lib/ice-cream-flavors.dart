@@ -24,7 +24,7 @@ class FlavorService {
       "Blueberry Cheesecake Swirl",
       "Toffee Coffee",
       "White Tiger",
-      "Salted Malted Cookie Dough",
+      "Cherry Delight",
           "* Grape Sorbet",
           "* Maraschino Cherry Sorbet",
       "Salty Caramel",
