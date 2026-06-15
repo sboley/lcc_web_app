@@ -18,16 +18,15 @@ class FlavorService {
 
   Future<Map<String, dynamic>> getFlavorData() async {
     const defaultFlavors = [
-      "Strawbarb Pie",
+      "Chika-Stik",
       "S'mores",
       "Campfire",
       "Samoa S'mores",
-      "Brownie Line",
-      "Coffee Cake",
-      "Peanut Butter",
-      "Whip S'mores",
-          "* Grape Sorbet",
-          "* PB&J Sorbet",
+      "Smooth Peanut Butter",
+      "Caramel Streusel",
+      "It's a Mystery",
+          "* Peanut Butter & Jelly Sorbet",
+          "* Strawberry Sorbet",
       "Salty Caramel",
       "Cookie Dough",
       "Buckeye",
