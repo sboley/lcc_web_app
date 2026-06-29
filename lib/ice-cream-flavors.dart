@@ -41,6 +41,7 @@ class FlavorService {
       "Mint Freckle",
       "Vanilla",
       "Cookies-n-creme"
+
     ];
 
     const defaultHours = [
