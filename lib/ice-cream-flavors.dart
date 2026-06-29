@@ -25,7 +25,7 @@ class FlavorService {
       "Black Raspberry Ripple",
       "Minty Oreo Line",
       "Bernice's Cafe",
-          "* Dark Chocolate Sorbet",
+          "* Fruit Punch Sorbet",
           "* Guava Sorbet",
       "Salty Caramel",
       "Cookie Dough",

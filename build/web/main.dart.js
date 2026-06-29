@@ -69828,10 +69828,10 @@ l=e
 k=J.QO(l,new A.UX())
 j=J.QO(l,new A.UY())
 i=B.ls
-h=B.eI
+h=B.eH
 if(!J.c(k,-1)&&!J.c(j,-1)&&k<j)i=J.ajE(l,k+1,j)
 if(!J.c(j,-1))h=J.ajD(l,j+1)
-g=n.on(J.ck(h)!==0?h:B.eI)
+g=n.on(J.ck(h)!==0?h:B.eH)
 f=A.aI(["flavors",h,"daily",g,"hours",i],t.N,t.z)
 q=f
 s=1
@@ -69844,7 +69844,7 @@ s=6
 break
 case 3:s=2
 break
-case 6:q=A.aI(["flavors",B.eI,"daily",n.on(B.eI),"hours",B.ls],t.N,t.z)
+case 6:q=A.aI(["flavors",B.eH,"daily",n.on(B.eH),"hours",B.ls],t.N,t.z)
 s=1
 break
 case 1:return A.O(q,r)
@@ -69957,10 +69957,10 @@ l=e
 k=J.QO(l,new A.UT())
 j=J.QO(l,new A.UU())
 i=B.lB
-h=B.eH
+h=B.eI
 if(!J.c(k,-1)&&!J.c(j,-1)&&k<j)i=J.ajE(l,k+1,j)
 if(!J.c(j,-1))h=J.ajD(l,j+1)
-g=n.on(J.ck(h)!==0?h:B.eH)
+g=n.on(J.ck(h)!==0?h:B.eI)
 f=A.aI(["flavors",h,"daily",g,"hours",i],t.N,t.z)
 q=f
 s=1
@@ -69973,7 +69973,7 @@ s=6
 break
 case 3:s=2
 break
-case 6:q=A.aI(["flavors",B.eH,"daily",n.on(B.eH),"hours",B.lB],t.N,t.z)
+case 6:q=A.aI(["flavors",B.eI,"daily",n.on(B.eI),"hours",B.lB],t.N,t.z)
 s=1
 break
 case 1:return A.O(q,r)
@@ -74825,7 +74825,6 @@ B.DF=s([B.bC,B.cB,B.bD,B.dK,B.aS,B.fq],A.ag("z<jk>"))
 B.DH=s([B.h2,B.h3],A.ag("z<t_>"))
 B.DJ=s([18,15,10,12,15,18,15,12,12],t.n)
 B.DL=s(["images/CupsConesMenu.jpg","images/SundaesMenu.jpg","images/ShakesMenu.jpg","images/MiscMenu.jpg","images/CoffeeMenu.jpg","images/CakesMenu.jpg","images/PansMenu.jpg"],t.s)
-B.eH=s(["M&M Swirl","S'mores","Chocolate Oreo Cake","Lemon Creme","Black Raspberry Ripple","Minty Oreo Line","Bernice's Cafe","* Dark Chocolate Sorbet","* Guava Sorbet","Salty Caramel","Cookie Dough","Buckeye","Chocolate","Birthday Cake","Dulce De Leche","Peanut Butter Cup","Strawberry","Butter Pecan","Cookie Monster","Blue Moon","Mint Freckle","Vanilla","Cookies-n-creme"],t.s)
 B.EN=new A.mu("en",null,"US")
 B.lt=s([B.EN],t.ss)
 B.lu=s([0,41,61,101,131,181,251,301,360],t.n)
@@ -74837,7 +74836,7 @@ B.Qi=new A.jt(8,0.12)
 B.Qh=new A.jt(12,0.14)
 B.lv=s([B.Qg,B.Ql,B.Qj,B.Qk,B.Qi,B.Qh],A.ag("z<jt>"))
 B.lw=s([0,21,51,121,151,191,271,321,360],t.n)
-B.eI=s(["Specialty FLAVORS","Brown Sugar Cheesecake","Cotton Candy Crunch","Coffee","Ube & Beyond","Maker's Mark Butter Pecan","Italian Coconut Cake","*Dairy Free: Strawberry Sorbet"," * Every Day Flavors","Cookie Dough","Buckeye","Chocolate","Birthday Cake","Dulce De Leche","Peanut Butter Cup","Strawberry","Butter Pecan","Cookie Monster","Blue Moon","Mint Freckle","Vanilla","Salty Caramel","Cookies-n-creme"],t.s)
+B.eH=s(["Specialty FLAVORS","Brown Sugar Cheesecake","Cotton Candy Crunch","Coffee","Ube & Beyond","Maker's Mark Butter Pecan","Italian Coconut Cake","*Dairy Free: Strawberry Sorbet"," * Every Day Flavors","Cookie Dough","Buckeye","Chocolate","Birthday Cake","Dulce De Leche","Peanut Butter Cup","Strawberry","Butter Pecan","Cookie Monster","Blue Moon","Mint Freckle","Vanilla","Salty Caramel","Cookies-n-creme"],t.s)
 B.DT=s([-1,0,0,1,0,0,-1,0,1,0,0,0,-1,1,0,1,1,1,1,0],t.n)
 B.BW=new A.eE(B.la,36,B.bc,null,null)
 B.z6=new A.ey(B.Q,null,null,B.BW,null)
@@ -74846,6 +74845,7 @@ B.z9=new A.ey(B.Q,null,null,B.wa,null)
 B.wz=new A.dO("Hours",null,B.ww,null,null)
 B.z8=new A.ey(B.Q,null,null,B.wz,null)
 B.DV=s([B.z6,B.z9,B.z8],t.F)
+B.eI=s(["M&M Swirl","S'mores","Chocolate Oreo Cake","Lemon Creme","Black Raspberry Ripple","Minty Oreo Line","Bernice's Cafe","* Fruit Punch Sorbet","* Guava Sorbet","Salty Caramel","Cookie Dough","Buckeye","Chocolate","Birthday Cake","Dulce De Leche","Peanut Butter Cup","Strawberry","Butter Pecan","Cookie Monster","Blue Moon","Mint Freckle","Vanilla","Cookies-n-creme"],t.s)
 B.wg=new A.xw(0,"left")
 B.wh=new A.xw(1,"right")
 B.DX=s([B.wg,B.wh],A.ag("z<xw>"))
