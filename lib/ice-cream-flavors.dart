@@ -19,12 +19,12 @@ class FlavorService {
   Future<Map<String, dynamic>> getFlavorData() async {
     const defaultFlavors = [
       "M&M Swirl",
-      "S'mores",
+      "Frutti Moodi",
       "Buckeye Latte",
       "Tropical Creamery",
-      "Black Raspberry Ripple",
+      "Maple Walnut",
       "Drum Line",
-      "Minty Oreo Line",
+      "Cotton Candy Crunch",
           "* Strawberry Sorbet",
           "* Guava Sorbet",
       "Salty Caramel",
