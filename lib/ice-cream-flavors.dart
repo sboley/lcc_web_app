@@ -26,7 +26,7 @@ class FlavorService {
       "Drum Line",
       "Cotton Candy Crunch",
           "* Strawberry Sorbet",
-          "* Guava Sorbet",
+          "* Rocket Pop Sorbet",
       "Salty Caramel",
       "Cookie Dough",
       "Buckeye",
