@@ -18,16 +18,16 @@ class FlavorService {
 
   Future<Map<String, dynamic>> getFlavorData() async {
     const defaultFlavors = [
-      "Red, White, and Blue Moon",
-      "Tropical Creamery",
-      "Strawberry Cheesecake",
+      "Cookies-n-Caramel Apple Creme",
+      "Coffee Cookies-n-Creme",
+      "Frutti Moodi",
       "Holiday Treat",
+      "Nutty Monster",
       "Maple Walnut",
-      "Drum Line",
       "Overzealous Birthday Cake",
           "* Strawberry Sorbet",
-          "* Firework Sorbet",
-      "Salty Caramel",
+          "* Root Beer Sorbet",
+      "SOLD OUT - Salty Caramel",
       "Cookie Dough",
       "Buckeye",
       "Chocolate",
