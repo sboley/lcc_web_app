@@ -19,7 +19,7 @@ class FlavorService {
   Future<Map<String, dynamic>> getFlavorData() async {
     const defaultFlavors = [
       "French Vanilla Wafer",
-      "Coffee",
+      "Bourbon Coffee Cream",
       "English Toffee Crunch",
       "State Route 29 (Rocky Road)",
       "Red Velvet Cake",
