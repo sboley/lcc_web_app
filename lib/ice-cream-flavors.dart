@@ -20,11 +20,11 @@ class FlavorService {
     const defaultFlavors = [
       "French Vanilla Wafer",
       "Bourbon Coffee Cream",
-      "English Toffee Crunch",
+      "Malted Cookies-n-Cream",
       "State Route 29 (Rocky Road)",
       "Red Velvet Cake",
       "Sweet Caramel Coconut",
-      "Cotton Candy Crunch",
+      "Crunchy Peanut Butter",
           "* Berry Lemonade Sorbet",
           "* RootBeer Sorbet",
       "Salty Caramel",
