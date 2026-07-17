@@ -23,7 +23,7 @@ class FlavorService {
       "Malted Cookies-n-Cream",
       "State Route 29 (Rocky Road)",
       "Red Velvet Cake",
-      "Sweet Caramel Coconut",
+      "Coconut Creme",
       "Crunchy Peanut Butter",
           "* Berry Lemonade Sorbet",
           "* RootBeer Sorbet",
