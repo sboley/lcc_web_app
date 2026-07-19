@@ -20,7 +20,7 @@ class FlavorService {
     const defaultFlavors = [
       "French Vanilla Wafer",
       "Bourbon Coffee Cream",
-      "Key Lime Creme",
+      "Destin Key Lime",
       "Chocolate Therapy",
       "Blue Monster",
       "Blue Lemon Moon",
