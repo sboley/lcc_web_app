@@ -27,7 +27,7 @@ class FlavorService {
       "Caramel Streusel",
           "* Berry Lemonade Sorbet",
           "* Grape Soda Sorbet",
-      "Salty Caramel",
+      "SOLD OUT - Salty Caramel",
       "Cookie Dough",
       "Buckeye",
       "Chocolate",
