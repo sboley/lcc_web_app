@@ -18,13 +18,13 @@ class FlavorService {
 
   Future<Map<String, dynamic>> getFlavorData() async {
     const defaultFlavors = [
-      "French Vanilla Wafer",
-      "Bourbon Coffee Cream",
+      "Chocolate Fudge Brownie",
+      "Bavarian Creme",
       "Destin Key Lime",
-      "Chocolate Therapy",
+      "Mint Latte",
       "Blue Monster",
-      "Blue Lemon Moon",
-      "Crunchy Peanut Butter",
+      "Peanut Butter Cookies & Creme",
+      "Caramel Streusel",
           "* Berry Lemonade Sorbet",
           "* Grape Soda Sorbet",
       "Salty Caramel",
