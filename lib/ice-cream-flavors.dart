@@ -18,14 +18,14 @@ class FlavorService {
 
   Future<Map<String, dynamic>> getFlavorData() async {
     const defaultFlavors = [
-      "Chocolate Fudge Brownie",
-      "Brownie Custard",
+      "Decadent Chocolate Cheesecake",
+      "Snickers Snickers",
       "Mint Cookies-n-Cream",
-      "Mint Latte",
+      "Coffee",
       "Strawberry Peach Cheesecake",
-      "Peanut Butter Cookies & Creme",
-      "Caramel Streusel",
-          "* Caramel Sorbet",
+      "Peanut Butter & Strawbery Jelly",
+      "Turtle",
+          "* Lemon Sorbet",
           "* Grape Soda Sorbet",
       "Salty Caramel",
       "Cookie Dough",
