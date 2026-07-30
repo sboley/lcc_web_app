@@ -24,7 +24,7 @@ class FlavorService {
       "Coffee",
       "Black Raspberry Ripple",
       "Peanut Butter & Strawbery Jelly",
-      "Decadent Chocolate",
+      "Butterscotcheriffic",
           "* Mixed Berry Sorbet",
           "* Coco Berry (Coconut-Strawberry) Sorbet",
       "Salty Caramel",
