@@ -23,7 +23,7 @@ class FlavorService {
       "Smooth Cherry",
       "Lemon Creme",
       "The King (Peanut Butter & Banana)",
-      "Strawberry Sugar Cookie",
+      "Butter Cream Nut Crunch",
       "Brownie Coffee Cloud",
           "* White Grape Peach Sorbet",
           "* CocoBerry (Coconut-Strawberry) Sorbet",
