@@ -20,7 +20,7 @@ class FlavorService {
     const defaultFlavors = [
       "Peach",
       "Blueberry",
-      "Smooth Cherry",
+      "Wedding Cake",
       "Lemon Creme",
       "The King (Peanut Butter & Banana)",
       "Butter Cream Nut Crunch",
