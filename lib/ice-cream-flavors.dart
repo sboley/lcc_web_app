@@ -19,9 +19,9 @@ class FlavorService {
   Future<Map<String, dynamic>> getFlavorData() async {
     const defaultFlavors = [
       "Peach",
-      "Peanut Butter Brownie Ripple",
+      "Salty Chetzel",
       "Wedding Cake",
-      "Lemon Creme",
+      "UBE & Beyond",
       "Butterscotcheriffic",
       "Butter Cream Nut Crunch",
       "Dark Chocolate Espresso",
