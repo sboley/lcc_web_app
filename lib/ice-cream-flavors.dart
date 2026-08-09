@@ -21,7 +21,7 @@ class FlavorService {
       "Roasted Coconut",
       "Chocolate P.B Pecan",
       "S'mores",
-      "UBE & Beyond",
+      "Cotton Candy Crunch",
       "Unbaked Delight",
       "Butter Cream Nut Crunch",
       "Dark Chocolate Espresso",
