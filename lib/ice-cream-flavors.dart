@@ -18,12 +18,12 @@ class FlavorService {
 
   Future<Map<String, dynamic>> getFlavorData() async {
     const defaultFlavors = [
-      "Roasted Coconut",
+      "Hogwart's Butterbeer",
       "Chocolate Peanut Butter Pecan",
       "S'mores",
       "DrumLine",
       "Unbaked Delight",
-      "Cotton Candy Crunch",
+      "Honey Sweet Corn",
       "Toffee Coffee",
           "*Strawberry Sorbet",
           "*Marshmallow Sorbet",
