@@ -18,7 +18,7 @@ class FlavorService {
 
   Future<Map<String, dynamic>> getFlavorData() async {
     const defaultFlavors = [
-      "Sweet Corn Razz Ripple",
+      "Peanut Butter Mallo",
       "Pralines-n-Custard",
       "Strawbarb Cheesecake",
       "DrumLine",
