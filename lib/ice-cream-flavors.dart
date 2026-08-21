@@ -21,7 +21,7 @@ class FlavorService {
       "Peanut Butter Mallo",
       "Pralines-n-Custard",
       "Strawbarb Cheesecake",
-      "DrumLine",
+      "Oreo Minty Line",
       "Cotton Candy Crunch",
       "Melissa's Zuchinni Bread",
       "Coffee",
