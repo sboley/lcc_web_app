@@ -18,15 +18,15 @@ class FlavorService {
 
   Future<Map<String, dynamic>> getFlavorData() async {
     const defaultFlavors = [
+      "White Tiger",
+      "Peanut Butter Fudge Brownie",
       "English Toffee Crunch",
-      "Pralines-n-Custard",
-      "Strawbarb Cheesecake",
-      "Oreo Minty Line",
-      "Cotton Candy Crunch",
-      "Red Pepper Raspberry",
+      "Minty Oreo Line",
+      "Blueberry Cheesecake Swril",
       "Coffee",
+      "Custard Creme",
           "*Strawberry Sorbet",
-          "*Sweet Corn Sorbet",
+          "*Cherry Limeaid Sorbet",
       "Salty Caramel",
       "Cookie Dough",
       "Buckeye",
