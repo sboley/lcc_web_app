@@ -45,8 +45,8 @@ class FlavorService {
       "Tuesday: 12pm - 9pm",
       "Wednesday: 12pm - 9pm",
       "Thursday: 12pm - 9pm",
-      "Friday: 12pm- 9:30pm",
-      "Saturday: 12pm - 9:30pm",
+      "Friday: 12pm- 9pm",
+      "Saturday: 12pm - 9pm",
       "Sunday: 12pm - 9pm"
     ];
 
