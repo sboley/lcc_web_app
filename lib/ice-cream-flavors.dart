@@ -18,13 +18,13 @@ class FlavorService {
 
   Future<Map<String, dynamic>> getFlavorData() async {
     const defaultFlavors = [
-      "Circus Cookie",
-      "Orange Creamcicle",
+      "Maker's Mark Butter Pecan",
+      "Brown Sugar Cheesecake",
       "Purple Cow",
       "Peanut Butter & Strawberry Jelly",
-      "Cinnamon Freckle Coffee",
-      "Decadent Chocolate Cake",
-      "Oreo Cake",
+      "Brownie Batter Swirl",
+      "Strawnana",
+      "Cinnamon Coffee Freckle",
           "*Marshmallow Sorbet",
           "*Cherry Limeaid Sorbet",
       "Salty Caramel",
