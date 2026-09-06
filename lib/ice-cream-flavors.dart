@@ -24,7 +24,7 @@ class FlavorService {
       "Peanut Butter & Strawberry Jelly",
       "Brownie Batter Swirl",
       "Strawnana",
-      "Cinnamon Coffee Freckle",
+      "Twixter Coffee",
           "*Marshmallow Sorbet",
           "*Cherry Limeaid Sorbet",
       "Salty Caramel",
