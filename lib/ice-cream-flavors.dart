@@ -24,7 +24,7 @@ class FlavorService {
       "Sweet Caramel Coconut",
       "Cherry",
       "Lemon Cookies & Creme",
-      "Peach Cinnamon Cheesecake",
+      "Nuttin But Trouble",
           "*Marshmallow Sorbet",
           "*Peanut Butter & Jelly Sorbet",
       "Salty Caramel",
