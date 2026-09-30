@@ -23,10 +23,9 @@ class FlavorService {
       "Mint Cookie Dough",
       "Fall Spiced Latte",
       "Cherry",
-      "Peach Struesel",
+      "Peanut Butter Line",
       "Salted Malted Cookie Dough",
-          "*Marshmallow Sorbet",
-          "*Peanut Butter & Jelly Sorbet",
+          "*Strawberry Sorbet",
           "*Apple Cider Sorbet",
       "Salty Caramel",
       "Cookie Dough",
@@ -45,13 +44,13 @@ class FlavorService {
     ];
 
     const defaultHours = [
-      "Monday- 12-9pm",
-      "Tuesday- 12-9pm",
-      "Wednesday- 12-9pm",
-      "Thursday- 12-9pm",
+      "Monday- 2-9pm",
+      "Tuesday- 2-9pm",
+      "Wednesday- 2-9pm",
+      "Thursday- 2-9pm",
       "Friday- 12-9pm",
       "Saturday- 12-9pm",
-      "Sunday- 12-9pm"
+      "Sunday- 12-8pm"
     ];
 
     try {

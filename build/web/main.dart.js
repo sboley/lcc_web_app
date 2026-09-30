@@ -286,11 +286,11 @@ arm(a){var s,r,q,p=new Float32Array(16)
 for(s=0;s<4;++s)for(r=s*4,q=0;q<4;++q)p[q*4+s]=a[r+q]
 return p},
 aEZ(a){var s,r,q,p=new Float32Array(9)
-for(s=a.length,r=0;r<9;++r){q=B.lB[r]
+for(s=a.length,r=0;r<9;++r){q=B.lC[r]
 if(q<s)p[r]=a[q]
 else p[r]=0}return p},
 aF_(a){var s,r,q,p=new Float32Array(9)
-for(s=a.length,r=0;r<9;++r){q=B.lB[r]
+for(s=a.length,r=0;r<9;++r){q=B.lC[r]
 if(q<s)p[r]=a[q]
 else p[r]=0}return p},
 arn(a){var s=new Float32Array(2)
@@ -63693,7 +63693,7 @@ if(a)c.y=A.q(t.N,t.UX)
 s=t.jl
 r=A.d([],s)
 q=c.y.i(0,b)
-if(q==null)q=B.eJ
+if(q==null)q=B.eK
 p=A.q(t.ob,t.UX)
 o=c.y.gbp()
 n=o.eJ(o)
@@ -63712,8 +63712,8 @@ if(j){r=A.d([],s)
 i=c.y
 i.toString
 q=i.i(0,h.gdF())
-if(q==null)q=B.eJ}else{r=B.eJ
-q=B.eJ}l=h
+if(q==null)q=B.eK}else{r=B.eK
+q=B.eK}l=h
 continue}if(j){i=h.b
 i=i==null?b:i.gPJ()
 j=i===!0}else j=!1
@@ -70946,7 +70946,7 @@ e=A.W(f,f.$ti.h("o.E"))
 l=e
 k=J.Rr(l,new A.VD())
 j=J.Rr(l,new A.VE())
-i=B.lD
+i=B.lE
 h=B.eI
 if(!J.c(k,-1)&&!J.c(j,-1)&&k<j)i=J.akZ(l,k+1,j)
 if(!J.c(j,-1))h=J.akY(l,j+1)
@@ -70963,7 +70963,7 @@ s=6
 break
 case 3:s=2
 break
-case 6:q=A.aJ(["flavors",B.eI,"daily",n.ov(B.eI),"hours",B.lD],t.N,t.z)
+case 6:q=A.aJ(["flavors",B.eI,"daily",n.ov(B.eI),"hours",B.lE],t.N,t.z)
 s=1
 break
 case 1:return A.O(q,r)
@@ -71046,7 +71046,7 @@ r=A.d([A.lY(A.aiK(B.Ei,B.aF,B.cj),n,n),B.wm],s)
 B.b.L(r,J.lF(o,new A.abu(),t.l7))
 r=A.u5(r,B.aF,B.aQ,B.cj)
 q=this.a
-return A.ao3(new A.f1(B.h2,n,n,A.u5(A.d([A.u9(n,r,B.A,n,new A.dM(B.eh,n,n,A.tD(20),B.lC,n,B.aK),n,n,n,B.ew,n,n,500),B.jp,A.ai8("images/lcc-copy.png",n,B.xS,300,300),B.KP,A.y7("The best homemade ice cream anywhere!",A.kY(n,n,B.AL,n,n,n,n,n,n,n,n,15,B.BL,n,B.bu,n,n,!0,n,n,n,n,n,n,n,n),B.bC),B.jp,new A.Jx(B.x_,20,A.d([new A.o3(B.li,B.GL,"FLAVORS",new A.abv(q,a),n),new A.o3(B.lk,B.kw,"MENU",new A.abw(q,a),n),new A.o3(B.C0,B.GM,"FACEBOOK",q.gJn(),n),new A.o3(B.C_,B.GP,"INFO",q.gJl(),n)],s),n)],s),B.aF,B.aQ,B.dt),n),B.ew)},
+return A.ao3(new A.f1(B.h2,n,n,A.u5(A.d([A.u9(n,r,B.A,n,new A.dM(B.eh,n,n,A.tD(20),B.lD,n,B.aK),n,n,n,B.ew,n,n,500),B.jp,A.ai8("images/lcc-copy.png",n,B.xS,300,300),B.KP,A.y7("The best homemade ice cream anywhere!",A.kY(n,n,B.AL,n,n,n,n,n,n,n,n,15,B.BL,n,B.bu,n,n,!0,n,n,n,n,n,n,n,n),B.bC),B.jp,new A.Jx(B.x_,20,A.d([new A.o3(B.li,B.GL,"FLAVORS",new A.abv(q,a),n),new A.o3(B.lk,B.kw,"MENU",new A.abw(q,a),n),new A.o3(B.C0,B.GM,"FACEBOOK",q.gJn(),n),new A.o3(B.C_,B.GP,"INFO",q.gJl(),n)],s),n)],s),B.aF,B.aQ,B.dt),n),B.ew)},
 $S:171}
 A.abu.prototype={
 $1(a){return new A.cW(B.l2,A.y7(a,B.wK,B.bC),null)},
@@ -71075,11 +71075,11 @@ e=A.W(f,f.$ti.h("o.E"))
 l=e
 k=J.Rr(l,new A.Vz())
 j=J.Rr(l,new A.VA())
-i=B.lE
-h=B.eK
+i=B.lB
+h=B.eJ
 if(!J.c(k,-1)&&!J.c(j,-1)&&k<j)i=J.akZ(l,k+1,j)
 if(!J.c(j,-1))h=J.akY(l,j+1)
-g=n.ov(J.cG(h)!==0?h:B.eK)
+g=n.ov(J.cG(h)!==0?h:B.eJ)
 f=A.aJ(["flavors",h,"daily",g,"hours",i],t.N,t.z)
 q=f
 s=1
@@ -71092,7 +71092,7 @@ s=6
 break
 case 3:s=2
 break
-case 6:q=A.aJ(["flavors",B.eK,"daily",n.ov(B.eK),"hours",B.lE],t.N,t.z)
+case 6:q=A.aJ(["flavors",B.eJ,"daily",n.ov(B.eJ),"hours",B.lB],t.N,t.z)
 s=1
 break
 case 1:return A.O(q,r)
@@ -71121,7 +71121,7 @@ K(a){var s=A.ahj(B.ce,B.P2),r=this.d
 r===$&&A.a()
 return A.aiM(s,A.ami(new A.aaV(this),r,t.a),null)},
 GY(a,b){var s=null
-return A.u9(s,a,B.A,s,new A.dM(B.eh,s,s,A.tD(20),B.lC,s,B.aK),s,s,s,B.ew,s,s,b)}}
+return A.u9(s,a,B.A,s,new A.dM(B.eh,s,s,A.tD(20),B.lD,s,B.aK),s,s,s,B.ew,s,s,b)}}
 A.aaV.prototype={
 $2(a,b){var s,r,q,p,o,n,m,l=null
 if(b.a===B.hz)return B.kr
@@ -75921,6 +75921,7 @@ B.D_=new A.mK(2,"top")
 B.lA=new A.mK(3,"center")
 B.D0=new A.mK(4,"bottom")
 B.D2=s([0,6,12,18],t.t)
+B.lB=s(["Monday- 2-9pm","Tuesday- 2-9pm","Wednesday- 2-9pm","Thursday- 2-9pm","Friday- 12-9pm","Saturday- 12-9pm","Sunday- 12-8pm"],t.s)
 B.Ej=s([1373.2198709594231,-1100.4251190754821,-7.278681089101213],t.n)
 B.E3=s([-271.815969077903,559.6580465940733,-32.46047482791194],t.n)
 B.EU=s([1.9622899599665666,-57.173814538844006,308.7233197812385],t.n)
@@ -75953,12 +75954,12 @@ B.E5=s([0.41233895,0.35762064,0.18051042],t.n)
 B.DU=s([0.2126,0.7152,0.0722],t.n)
 B.EQ=s([0.01932141,0.11916382,0.95034478],t.n)
 B.bN=s([B.E5,B.DU,B.EQ],t.zg)
-B.lB=s([0,4,12,1,5,13,3,7,15],t.t)
+B.lC=s([0,4,12,1,5,13,3,7,15],t.t)
 B.DG=s([65533],t.t)
 B.Ad=new A.t(0.45098039215686275,0,0,0,B.e)
 B.Hr=new A.l(0,3)
 B.xU=new A.e1(0,B.jQ,B.Ad,B.Hr,6)
-B.lC=s([B.xU],t.sq)
+B.lD=s([B.xU],t.sq)
 B.bB=new A.jn(0,"left")
 B.cz=new A.jn(1,"right")
 B.bC=new A.jn(2,"center")
@@ -75967,10 +75968,9 @@ B.aT=new A.jn(4,"start")
 B.ft=new A.jn(5,"end")
 B.DP=s([B.bB,B.cz,B.bC,B.dK,B.aT,B.ft],A.ag("y<jn>"))
 B.DR=s([B.h6,B.h7],A.ag("y<tw>"))
+B.lE=s(["Monday: 2pm - 9pm","Tuesday: 2pm - 9pm","Wednesday: 2pm - 9pm","Thursday: 2pm - 9pm","Friday: 12pm- 9pm","Saturday: 12pm - 9pm","Sunday: 12pm - 8pm"],t.s)
 B.DT=s([18,15,10,12,15,18,15,12,12],t.n)
-B.lD=s(["Monday: 12pm - 9pm","Tuesday: 12pm - 9pm","Wednesday: 12pm - 9pm","Thursday: 12pm - 9pm","Friday: 12pm- 9pm","Saturday: 12pm - 9pm","Sunday: 12pm - 9pm"],t.s)
 B.DV=s(["images/CupsConesMenu.jpg","images/SundaesMenu.jpg","images/ShakesMenu.jpg","images/MiscMenu.jpg","images/CoffeeMenu.jpg","images/CakesMenu.jpg","images/PansMenu.jpg"],t.s)
-B.lE=s(["Monday- 12-9pm","Tuesday- 12-9pm","Wednesday- 12-9pm","Thursday- 12-9pm","Friday- 12-9pm","Saturday- 12-9pm","Sunday- 12-9pm"],t.s)
 B.EV=new A.mL("en",null,"US")
 B.lF=s([B.EV],t.ss)
 B.lG=s([0,41,61,101,131,181,251,301,360],t.n)
@@ -76000,6 +76000,7 @@ B.E7=s([B.ar,B.n],A.ag("y<y8>"))
 B.U=new A.yc(0,"rtl")
 B.H=new A.yc(1,"ltr")
 B.ik=s([B.U,B.H],A.ag("y<yc>"))
+B.eJ=s(["Granny's Pumpkin","Fairy Dream","Mint Cookie Dough","Fall Spiced Latte","Cherry","Peanut Butter Line","Salted Malted Cookie Dough","*Strawberry Sorbet","*Apple Cider Sorbet","Salty Caramel","Cookie Dough","Buckeye","Chocolate","Birthday Cake","Dulce De Leche","Peanut Butter Cup","Strawberry","Butter Pecan","Cookie Monster","Blue Moon","Mint Freckle","Vanilla","Cookies-n-creme"],t.s)
 B.fG=new A.hB(0,"leading")
 B.bn=new A.hB(1,"title")
 B.dT=new A.hB(2,"subtitle")
@@ -76034,7 +76035,7 @@ B.Es=s([],t.E)
 B.Et=s([],t.fJ)
 B.Er=s([],t.ER)
 B.lK=s([],t.tc)
-B.eJ=s([],t.jl)
+B.eK=s([],t.jl)
 B.lM=s([],t.wi)
 B.Ex=s([],A.ag("y<i7<@>>"))
 B.im=s([],t.AO)
@@ -76047,7 +76048,6 @@ B.RB=s([],t.F)
 B.Eq=s([],t.t)
 B.lN=s([],t.ee)
 B.Ey=s([],t.XS)
-B.eK=s(["Granny's Pumpkin","Fairy Dream","Mint Cookie Dough","Fall Spiced Latte","Cherry","Peach Struesel","Salted Malted Cookie Dough","*Marshmallow Sorbet","*Peanut Butter & Jelly Sorbet","*Apple Cider Sorbet","Salty Caramel","Cookie Dough","Buckeye","Chocolate","Birthday Cake","Dulce De Leche","Peanut Butter Cup","Strawberry","Butter Pecan","Cookie Monster","Blue Moon","Mint Freckle","Vanilla","Cookies-n-creme"],t.s)
 B.dd=s([B.bF,B.bo,B.e_,B.e0,B.h5],t.QP)
 B.DJ=s([0.001200833568784504,0.002389694492170889,0.0002795742885861124],t.n)
 B.Eo=s([0.0005891086651375999,0.0029785502573438758,0.0003270666104008398],t.n)
