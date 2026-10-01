@@ -19,14 +19,14 @@ class FlavorService {
   Future<Map<String, dynamic>> getFlavorData() async {
     const defaultFlavors = [
       "Granny's Pumpkin",
-      "Fairy Dream",
+      "Cinnamon",
       "Mint Cookie Dough",
-      "Fall Spiced Latte",
+      "Buckeye Latte",
       "Cherry",
       "Peanut Butter Line",
       "Salted Malted Cookie Dough",
           "*Strawberry Sorbet",
-          "*Apple Cider Sorbet",
+          "*Mango Sorbet",
       "Salty Caramel",
       "Cookie Dough",
       "Buckeye",
