@@ -20,7 +20,7 @@ class FlavorService {
     const defaultFlavors = [
       "Granny's Pumpkin",
       "Cinnamon",
-      "Mint Cookie Dough",
+      "Chocolate Bourbon Brownie",
       "Buckeye Latte",
       "Cherry",
       "Peanut Butter Line",
