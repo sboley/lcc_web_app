@@ -84,20 +84,6 @@ class _HomePageState extends State<HomePage> {
               onTap: () => _launchFlavors(context),
             ),
             ListTile(
-              leading: const Icon(
-                Icons.admin_panel_settings,
-                color: Colors.pink,
-              ),
-              title: const Text('Admin'),
-              onTap: () {
-                Navigator.pop(context);
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const AdminScreen()),
-                );
-              },
-            ),
-            ListTile(
               leading: const Icon(Icons.restaurant_menu, color: Colors.pink),
               title: const Text('Menu'),
               onTap: () => _launchMenu(context),
@@ -111,6 +97,20 @@ class _HomePageState extends State<HomePage> {
               leading: const Icon(Icons.facebook, color: Colors.pink),
               title: const Text('Facebook'),
               onTap: _launchShare,
+            ),
+            ListTile(
+              leading: const Icon(
+                Icons.admin_panel_settings,
+                color: Colors.pink,
+              ),
+              title: const Text('Admin'),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const AdminScreen()),
+                );
+              },
             ),
             const Spacer(),
             const Padding(
