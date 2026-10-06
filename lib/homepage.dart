@@ -98,6 +98,7 @@ class _HomePageState extends State<HomePage> {
               title: const Text('Facebook'),
               onTap: _launchShare,
             ),
+            const Spacer(),
             ListTile(
               leading: const Icon(
                 Icons.admin_panel_settings,
@@ -112,7 +113,6 @@ class _HomePageState extends State<HomePage> {
                 );
               },
             ),
-            const Spacer(),
             const Padding(
               padding: EdgeInsets.all(12.0),
               child: Text(
