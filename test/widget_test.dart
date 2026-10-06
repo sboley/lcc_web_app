@@ -1,30 +1,60 @@
-// This is a basic Flutter widget test.
-//
-// To perform an interaction with a widget in your test, use the WidgetTester
-// utility in the flutter_test package. For example, you can send tap and scroll
-// gestures. You can also use WidgetTester to find child widgets in the widget
-// tree, read text, and verify that the values of widget properties are correct.
+import 'dart:convert';
 
-import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-
-import 'package:lcc_web_app/main.dart';
+import 'package:http/http.dart' as http;
+import 'package:http/testing.dart';
+import 'package:lcc_web_app/services/menu_api.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+  test('loads public flavors and hours from the menu API', () async {
+    final api = MenuApi(
+      client: MockClient((request) async {
+        expect(request.url.path, '/api/menu');
+        return http.Response(
+          jsonEncode({
+            'flavors': ['Vanilla', 'Chocolate'],
+            'hours': ['Monday: 2pm - 8pm'],
+          }),
+          200,
+        );
+      }),
+    );
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+    final menu = await api.getMenu();
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
+    expect(menu.flavors, ['Vanilla', 'Chocolate']);
+    expect(menu.hours, ['Monday: 2pm - 8pm']);
+  });
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+  test('sends login credentials and returns the admin token', () async {
+    final api = MenuApi(
+      client: MockClient((request) async {
+        expect(request.method, 'POST');
+        expect(request.url.path, '/api/admin/login');
+        expect(jsonDecode(request.body), {
+          'username': 'admin',
+          'password': 'test-password',
+        });
+        return http.Response(jsonEncode({'token': 'signed-token'}), 200);
+      }),
+    );
+
+    expect(await api.login('admin', 'test-password'), 'signed-token');
+  });
+
+  test('sends flavor edits with the admin bearer token', () async {
+    final api = MenuApi(
+      client: MockClient((request) async {
+        expect(request.method, 'PUT');
+        expect(request.url.path, '/api/admin/flavors');
+        expect(request.headers['authorization'], 'Bearer signed-token');
+        expect(jsonDecode(request.body), {
+          'flavors': ['Vanilla'],
+        });
+        return http.Response(jsonEncode({'ok': true}), 200);
+      }),
+    );
+
+    await api.updateFlavors('signed-token', ['Vanilla']);
   });
 }

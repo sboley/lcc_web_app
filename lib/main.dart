@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
-import 'homepage.dart'; // Make sure this path is correct
+import 'homepage.dart';
 // import 'package:flutter_web_plugins/url_strategy.dart';
 
-//This is the Web App only for Lake City Creamery.
-//it is stored in the github repository lcc_web_app/gh-pages
-//the flavors.txt that stores the hours and the flavors is in the github repository lakecity_app_buile_web. The only thing in the repository is the the flavors.txt. It has a github page assocated with it.
-
+// Menu data is served by the Railway API; the web app is deployed on Cloudflare.
 
 void main() {
-//  usePathUrlStrategy();
+  //  usePathUrlStrategy();
   runApp(const MyApp());
 }
 

@@ -1,126 +1,54 @@
-import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
+import 'dart:math';
+import 'services/menu_api.dart';
 
 class FlavorScreen extends StatefulWidget {
-  final String flavorsUrl;
-
-  const FlavorScreen({Key? key, required this.flavorsUrl}) : super(key: key);
+  const FlavorScreen({Key? key}) : super(key: key);
 
   @override
   State<FlavorScreen> createState() => _FlavorScreenState();
 }
 
-class FlavorService {
-  final String flavorsUrl;
-
-  FlavorService(this.flavorsUrl);
-
-  Future<Map<String, dynamic>> getFlavorData() async {
-    const defaultFlavors = [
-      "Granny's Pumpkin",
-      "Cinnamon",
-      "Chocolate Bourbon Brownie",
-      "Buckeye Latte",
-      "Cherry",
-      "Peanut Butter Line",
-      "Salted Malted Cookie Dough",
-          "*Strawberry Sorbet",
-          "*Mango Sorbet",
-      "Salty Caramel",
-      "Cookie Dough",
-      "Buckeye",
-      "Chocolate",
-      "Birthday Cake",
-      "Dulce De Leche",
-      "Peanut Butter Cup",
-      "Strawberry",
-      "Butter Pecan",
-      "Cookie Monster",
-      "Blue Moon",
-      "Mint Freckle",
-      "Vanilla",
-      "Cookies-n-creme"
-    ];
-
-    const defaultHours = [
-      "Monday- 2-9pm",
-      "Tuesday- 2-9pm",
-      "Wednesday- 2-9pm",
-      "Thursday- 2-9pm",
-      "Friday- 12-9pm",
-      "Saturday- 12-9pm",
-      "Sunday- 12-8pm"
-    ];
-
-    try {
-      final response = await http.get(Uri.parse(flavorsUrl));
-      if (response.statusCode == 200) {
-        final lines = response.body
-            .split('\n')
-            .map((line) => line.trim())
-            .where((line) => line.isNotEmpty)
-            .toList();
-
-        final hoursStart = lines.indexWhere((line) => line.toUpperCase().contains("# HOURS"));
-        final flavorsStart = lines.indexWhere((line) => line.toUpperCase().contains("# FLAVORS"));
-
-        List<String> hours = defaultHours;
-        List<String> flavors = defaultFlavors;
-
-        if (hoursStart != -1 && flavorsStart != -1 && hoursStart < flavorsStart) {
-          hours = lines.sublist(hoursStart + 1, flavorsStart);
-        }
-
-        if (flavorsStart != -1) {
-          flavors = lines.sublist(flavorsStart + 1);
-        }
-
-        final daily = getDailyFlavor(flavors.isNotEmpty ? flavors : defaultFlavors);
-
-        return {"flavors": flavors, "daily": daily, "hours": hours};
-      }
-    } catch (_) {}
-
-    final daily = getDailyFlavor(defaultFlavors);
-    return {"flavors": defaultFlavors, "daily": daily, "hours": defaultHours};
-  }
-
-  String getDailyFlavor(List<String> flavors) {
-    final today = DateTime.now();
-    final seed = int.parse("${today.year}${today.month}${today.day}");
-    final random = Random(seed);
-    return flavors[random.nextInt(flavors.length)];
-  }
-}
-
 class _FlavorScreenState extends State<FlavorScreen> {
-  late Future<Map<String, dynamic>> _flavorData;
+  late Future<MenuData> _flavorData;
 
   @override
   void initState() {
     super.initState();
-    final service = FlavorService(widget.flavorsUrl);
-    _flavorData = service.getFlavorData();
+    _flavorData = MenuApi().getMenu();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('🍨 Lake City Creamery',),
+        title: const Text('🍨 Lake City Creamery'),
         backgroundColor: Colors.pink[100],
       ),
-      body: FutureBuilder<Map<String, dynamic>>(
+      body: FutureBuilder<MenuData>(
         future: _flavorData,
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return const Center(child: CircularProgressIndicator());
           }
+          if (snapshot.hasError) {
+            return const Center(
+              child: Padding(
+                padding: EdgeInsets.all(24),
+                child: Text(
+                  'Unable to load flavors and hours right now. Please try again later.',
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            );
+          }
 
-          final flavors = snapshot.data?["flavors"] as List<String>? ?? [];
-          final daily = snapshot.data?["daily"] as String? ?? "Loading...";
-          final hours = snapshot.data?["hours"] as List<String>? ?? ["Hours unavailable"];
+          final menu = snapshot.data!;
+          final flavors = menu.flavors;
+          final today = DateTime.now();
+          final seed = int.parse('${today.year}${today.month}${today.day}');
+          final daily = flavors[Random(seed).nextInt(flavors.length)];
+          final hours = menu.hours;
 
           return SingleChildScrollView(
             padding: const EdgeInsets.all(16.0),
@@ -131,7 +59,7 @@ class _FlavorScreenState extends State<FlavorScreen> {
                 children: [
                   // Daily flavor card
                   _buildCard(
-                    width: 500,  // max width
+                    width: 500, // max width
                     child: Center(
                       child: Row(
                         mainAxisSize: MainAxisSize.min,
@@ -142,7 +70,10 @@ class _FlavorScreenState extends State<FlavorScreen> {
                             child: Text(
                               "Today's Flavor: $daily",
                               style: const TextStyle(
-                                  fontSize: 24, fontWeight: FontWeight.bold, color: Colors.pink),
+                                fontSize: 24,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.pink,
+                              ),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -154,7 +85,7 @@ class _FlavorScreenState extends State<FlavorScreen> {
 
                   // Hours card
                   _buildCard(
-                    width: 500,  // max width
+                    width: 500, // max width
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
@@ -162,27 +93,39 @@ class _FlavorScreenState extends State<FlavorScreen> {
                           child: Row(
                             mainAxisSize: MainAxisSize.min,
                             children: const [
-                              Center(child: Icon(Icons.schedule, color: Colors.pink, size: 36)),
+                              Center(
+                                child: Icon(
+                                  Icons.schedule,
+                                  color: Colors.pink,
+                                  size: 36,
+                                ),
+                              ),
                               Center(child: SizedBox(width: 12)),
                               Center(
                                 child: Text(
                                   "Hours",
                                   style: TextStyle(
-                                      fontSize: 18, fontWeight: FontWeight.bold),
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                                 ),
                               ),
                             ],
                           ),
                         ),
                         const SizedBox(height: 8),
-                        ...hours.map((h) => Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 2.0),
-                          child: Text(
-                            h,
-                            style: const TextStyle(
-                                fontSize: 16, color: Colors.black87),
+                        ...hours.map(
+                          (h) => Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 2.0),
+                            child: Text(
+                              h,
+                              style: const TextStyle(
+                                fontSize: 16,
+                                color: Colors.black87,
+                              ),
+                            ),
                           ),
-                        )),
+                        ),
                       ],
                     ),
                   ),
@@ -195,8 +138,10 @@ class _FlavorScreenState extends State<FlavorScreen> {
                       padding: EdgeInsets.symmetric(vertical: 8.0),
                       child: Text(
                         "Current Flavors:",
-                        style:
-                        TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
                   ),
@@ -237,13 +182,16 @@ class _FlavorScreenState extends State<FlavorScreen> {
                       return Card(
                         color: isDaily ? Colors.pink[100] : Colors.white,
                         child: ListTile(
-                          leading:
-                          const Icon(Icons.icecream, color: Colors.brown),
-                          title: Text(
-                            flavor,
+                          leading: const Icon(
+                            Icons.icecream,
+                            color: Colors.brown,
                           ),
+                          title: Text(flavor),
                           trailing: isDaily
-                              ? const Icon(Icons.check_circle, color: Colors.pink)
+                              ? const Icon(
+                                  Icons.check_circle,
+                                  color: Colors.pink,
+                                )
                               : null,
                         ),
                       );
@@ -263,13 +211,13 @@ class _FlavorScreenState extends State<FlavorScreen> {
       width: width ?? double.infinity,
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: Colors.pink[50],                // card background color
+        color: Colors.pink[50], // card background color
         borderRadius: BorderRadius.circular(20), // rounded corners
         boxShadow: const [
           BoxShadow(
-            color: Colors.black45,  // shadow color
-            blurRadius: 6,          // how blurry the shadow is
-            offset: Offset(0, 3),   // shadow position: horizontal, vertical
+            color: Colors.black45, // shadow color
+            blurRadius: 6, // how blurry the shadow is
+            offset: Offset(0, 3), // shadow position: horizontal, vertical
           ),
         ],
       ),

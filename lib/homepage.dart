@@ -1,95 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:lcc_web_app/utils/asset_path.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'admin_screen.dart';
 import 'ice-cream-flavors.dart';
 import 'menu.dart';
-import 'dart:math';
-import 'package:http/http.dart' as http;
-
-class FlavorService {
-  final String flavorsUrl;
-
-  FlavorService(this.flavorsUrl);
-
-  Future<Map<String, dynamic>> getFlavorData() async {
-    const defaultFlavors = [
-      "Specialty FLAVORS",
-      "Brown Sugar Cheesecake",
-      "Cotton Candy Crunch",
-      "Coffee",
-      "Ube & Beyond",
-      "Maker's Mark Butter Pecan",
-      "Italian Coconut Cake",
-
-          "*Dairy Free: Strawberry Sorbet",
-
-         " * Every Day Flavors",
-      "Cookie Dough",
-      "Buckeye",
-      "Chocolate",
-      "Birthday Cake",
-      "Dulce De Leche",
-      "Peanut Butter Cup",
-      "Strawberry",
-      "Butter Pecan",
-      "Cookie Monster",
-      "Blue Moon",
-      "Mint Freckle",
-      "Vanilla",
-      "Salty Caramel",
-      "Cookies-n-creme"
-    ];
-
-    const defaultHours = [
-      "Monday: 2pm - 9pm",
-      "Tuesday: 2pm - 9pm",
-      "Wednesday: 2pm - 9pm",
-      "Thursday: 2pm - 9pm",
-      "Friday: 12pm- 9pm",
-      "Saturday: 12pm - 9pm",
-      "Sunday: 12pm - 8pm"
-    ];
-
-    try {
-      final response = await http.get(Uri.parse(flavorsUrl));
-      if (response.statusCode == 200) {
-        final lines = response.body
-            .split('\n')
-            .map((line) => line.trim())
-            .where((line) => line.isNotEmpty)
-            .toList();
-
-        final hoursStart = lines.indexWhere((line) => line.toUpperCase().contains("# HOURS"));
-        final flavorsStart = lines.indexWhere((line) => line.toUpperCase().contains("# FLAVORS"));
-
-        List<String> hours = defaultHours;
-        List<String> flavors = defaultFlavors;
-
-        if (hoursStart != -1 && flavorsStart != -1 && hoursStart < flavorsStart) {
-          hours = lines.sublist(hoursStart + 1, flavorsStart);
-        }
-
-        if (flavorsStart != -1) {
-          flavors = lines.sublist(flavorsStart + 1);
-        }
-
-        final daily = getDailyFlavor(flavors.isNotEmpty ? flavors : defaultFlavors);
-
-        return {"flavors": flavors, "daily": daily, "hours": hours};
-      }
-    } catch (_) {}
-
-    final daily = getDailyFlavor(defaultFlavors);
-    return {"flavors": defaultFlavors, "daily": daily, "hours": defaultHours};
-  }
-
-  String getDailyFlavor(List<String> flavors) {
-    final today = DateTime.now();
-    final seed = int.parse("${today.year}${today.month}${today.day}");
-    final random = Random(seed);
-    return flavors[random.nextInt(flavors.length)];
-  }
-}
+import 'services/menu_api.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -99,27 +13,18 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  late Future<Map<String, dynamic>> _flavorData;
+  late Future<MenuData> _flavorData;
 
   @override
   void initState() {
     super.initState();
-    const flavorsUrl =
-        "https://raw.githubusercontent.com/sboley/lakecity_app_build_web/main/flavors.txt";
-    final service = FlavorService(flavorsUrl);
-    _flavorData = service.getFlavorData();
+    _flavorData = MenuApi().getMenu();
   }
 
   void _launchFlavors(BuildContext context) {
     Navigator.push(
       context,
-      MaterialPageRoute(
-        builder: (context) =>
-        const FlavorScreen(
-          flavorsUrl:
-          "https://raw.githubusercontent.com/sboley/lakecity_app_build_web/main/flavors.txt",
-        ),
-      ),
+      MaterialPageRoute(builder: (context) => const FlavorScreen()),
     );
   }
 
@@ -139,7 +44,8 @@ class _HomePageState extends State<HomePage> {
 
   Future<void> _launchMap() async {
     final url = Uri.parse(
-        'https://www.google.com/search?q=lake+city+creamery&oq=lake+city+creamery');
+      'https://www.google.com/search?q=lake+city+creamery&oq=lake+city+creamery',
+    );
     if (await canLaunchUrl(url)) {
       await launchUrl(url, mode: LaunchMode.externalApplication);
     }
@@ -178,6 +84,20 @@ class _HomePageState extends State<HomePage> {
               onTap: () => _launchFlavors(context),
             ),
             ListTile(
+              leading: const Icon(
+                Icons.admin_panel_settings,
+                color: Colors.pink,
+              ),
+              title: const Text('Admin'),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const AdminScreen()),
+                );
+              },
+            ),
+            ListTile(
               leading: const Icon(Icons.restaurant_menu, color: Colors.pink),
               title: const Text('Menu'),
               onTap: () => _launchMenu(context),
@@ -214,17 +134,26 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: Colors.pink[100],
       ),
       body: SafeArea(
-        child: FutureBuilder<Map<String, dynamic>>(
+        child: FutureBuilder<MenuData>(
           future: _flavorData,
           builder: (context, snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
               return const Center(child: CircularProgressIndicator());
             }
+            if (snapshot.hasError) {
+              return const Center(
+                child: Padding(
+                  padding: EdgeInsets.all(24),
+                  child: Text(
+                    'Unable to load hours right now. Please try again later.',
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+              );
+            }
 
-            final flavors = snapshot.data?["flavors"] as List<String>? ?? [];
-            final daily = snapshot.data?["daily"] as String? ?? "Loading...";
-            final hours = snapshot.data?["hours"] as List<String>? ??
-                ["Hours unavailable"];
+            final menu = snapshot.data!;
+            final hours = menu.hours;
 
             return SingleChildScrollView(
               padding: const EdgeInsets.all(16.0),
@@ -259,7 +188,7 @@ class _HomePageState extends State<HomePage> {
 
                     // Hours card
                     _buildCard(
-                      width: 500,  // max width
+                      width: 500, // max width
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
                         crossAxisAlignment: CrossAxisAlignment.center,
@@ -273,23 +202,29 @@ class _HomePageState extends State<HomePage> {
                                 Text(
                                   "Hours",
                                   style: TextStyle(
-                                      fontSize: 18, fontWeight: FontWeight.bold),
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                                 ),
                               ],
                             ),
                           ),
                           const SizedBox(height: 8),
-                          ...hours.map((h) =>
-                              Padding(
-                                padding: const EdgeInsets.symmetric(
-                                    vertical: 2.0),
-                                child: Text(
-                                  h,
-                                  style: const TextStyle(
-                                      fontSize: 16, color: Colors.black87),
-                                    textAlign: TextAlign.center,
+                          ...hours.map(
+                            (h) => Padding(
+                              padding: const EdgeInsets.symmetric(
+                                vertical: 2.0,
+                              ),
+                              child: Text(
+                                h,
+                                style: const TextStyle(
+                                  fontSize: 16,
+                                  color: Colors.black87,
                                 ),
-                              )),
+                                textAlign: TextAlign.center,
+                              ),
+                            ),
+                          ),
                         ],
                       ),
                     ),
