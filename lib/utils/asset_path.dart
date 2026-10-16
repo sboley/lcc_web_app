@@ -6,7 +6,7 @@ String fixAssetPath(String logicalPath) {
   // Remove any number of duplicate leading "assets/"
   var normalized = logicalPath;
   while (normalized.startsWith('assets/')) {
-    normalized = normalized.substring(''.length);
+    normalized = normalized.substring('assets/'.length);
   }
 
   // Now prepend exactly two levels

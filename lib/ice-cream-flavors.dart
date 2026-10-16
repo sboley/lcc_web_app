@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'dart:math';
+import 'package:flutter/material.dart';
 import 'services/menu_api.dart';
 
 class FlavorScreen extends StatefulWidget {
@@ -12,10 +12,53 @@ class FlavorScreen extends StatefulWidget {
 class _FlavorScreenState extends State<FlavorScreen> {
   late Future<MenuData> _flavorData;
 
+  static const List<String> defaultHours = [
+    "Monday- 2-8pm",
+    "Tuesday- 2-8pm",
+    "Wednesday- 2-8pm",
+    "Thursday- 2-8pm",
+    "Friday- 12-9pm",
+    "Saturday- 12-9pm",
+    "Sunday- 12-8pm",
+  ];
+
+  static const List<String> defaultFlavors = [
+    "Brown Sugar Cheesecake",
+    "Cotton Candy Crunch",
+    "Coffee",
+    "Ube & Beyond",
+    "Maker's Mark Butter Pecan",
+    "Italian Coconut Cake",
+    "*Dairy Free: Strawberry Sorbet",
+    "* Every Day Flavors",
+    "Cookie Dough",
+    "Buckeye",
+    "Chocolate",
+    "Birthday Cake",
+    "Dulce De Leche",
+    "Peanut Butter Cup",
+    "Strawberry",
+    "Butter Pecan",
+    "Cookie Monster",
+    "Blue Moon",
+    "Mint Freckle",
+    "Vanilla",
+    "Salty Caramel",
+    "Cookies-n-creme",
+    "# Limited-Time Sundaes",
+    "N/A",
+  ];
+
   @override
   void initState() {
     super.initState();
-    _flavorData = MenuApi().getMenu();
+    _refresh();
+  }
+
+  void _refresh() {
+    setState(() {
+      _flavorData = MenuApi().getMenu();
+    });
   }
 
   @override
@@ -24,6 +67,13 @@ class _FlavorScreenState extends State<FlavorScreen> {
       appBar: AppBar(
         title: const Text('🍨 Lake City Creamery'),
         backgroundColor: Colors.pink[100],
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.refresh),
+            tooltip: 'Refresh',
+            onPressed: _refresh,
+          ),
+        ],
       ),
       body: FutureBuilder<MenuData>(
         future: _flavorData,
@@ -31,24 +81,18 @@ class _FlavorScreenState extends State<FlavorScreen> {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return const Center(child: CircularProgressIndicator());
           }
-          if (snapshot.hasError) {
-            return const Center(
-              child: Padding(
-                padding: EdgeInsets.all(24),
-                child: Text(
-                  'Unable to load flavors and hours right now. Please try again later.',
-                  textAlign: TextAlign.center,
-                ),
-              ),
-            );
-          }
 
-          final menu = snapshot.data!;
-          final flavors = menu.flavors;
+          final menu = snapshot.data;
+          final flavors = (menu != null && menu.flavors.isNotEmpty)
+              ? menu.flavors
+              : defaultFlavors;
+          final hours = (menu != null && menu.hours.isNotEmpty)
+              ? menu.hours
+              : defaultHours;
+
           final today = DateTime.now();
           final seed = int.parse('${today.year}${today.month}${today.day}');
           final daily = flavors[Random(seed).nextInt(flavors.length)];
-          final hours = menu.hours;
 
           return SingleChildScrollView(
             padding: const EdgeInsets.all(16.0),
@@ -115,7 +159,7 @@ class _FlavorScreenState extends State<FlavorScreen> {
                         ),
                         const SizedBox(height: 8),
                         ...hours.map(
-                          (h) => Padding(
+                              (h) => Padding(
                             padding: const EdgeInsets.symmetric(vertical: 2.0),
                             child: Text(
                               h,
@@ -154,31 +198,6 @@ class _FlavorScreenState extends State<FlavorScreen> {
                       final flavor = flavors[index];
                       final isDaily = flavor == daily;
 
-                      // if (flavor.contains("SOLD OUT!") && flavor.contains("Salty Caramel")) {
-                      //   return Card(
-                      //     color: isDaily ? Colors.pink[100] : Colors.white,
-                      //     child: ListTile(
-                      //       leading: const Icon(Icons.icecream, color: Colors.brown),
-                      //       title: Text.rich(
-                      //         TextSpan(
-                      //           children: [
-                      //             const TextSpan(text: "SOLD OUT! "),
-                      //             const TextSpan(
-                      //               text: "Salty Caramel",
-                      //               style: TextStyle(
-                      //                 decoration: TextDecoration.lineThrough,
-                      //               ),
-                      //             ),
-                      //           ],
-                      //         ),
-                      //       ),
-                      //       trailing: isDaily
-                      //           ? const Icon(Icons.check_circle, color: Colors.pink)
-                      //           : null,
-                      //     ),
-                      //   );
-                      // }
-
                       return Card(
                         color: isDaily ? Colors.pink[100] : Colors.white,
                         child: ListTile(
@@ -189,9 +208,9 @@ class _FlavorScreenState extends State<FlavorScreen> {
                           title: Text(flavor),
                           trailing: isDaily
                               ? const Icon(
-                                  Icons.check_circle,
-                                  color: Colors.pink,
-                                )
+                            Icons.check_circle,
+                            color: Colors.pink,
+                          )
                               : null,
                         ),
                       );

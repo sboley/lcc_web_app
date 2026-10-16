@@ -1,6 +1,6 @@
 {
     "name": "Lake City Creamery",
-    "short_name": "lcc_web_app",
+    "short_name": "Lake City Creamery",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
